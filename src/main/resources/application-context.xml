@@ -5,6 +5,12 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- bean definitions here -->
+	<bean name="add1" class="learning.spring.model.Address">
+	
+		<property name="city" value="Noida" />
+		<property name="state" value="UP" />	
+	
+	</bean>
 	
 	
 	<bean name="emp1" class="learning.spring.model.Employee">
@@ -12,7 +18,16 @@
 		<property name="id" value="202" />
 		<property name="name" value="Vikas" />
 		<property name="gender" value="Male" />
+		<property name="address" ref="add1" />
 		
+	</bean>
+	
+	
+	<bean name="add2" class="learning.spring.model.Address">
+	
+		<property name="city" value="Pune" />
+		<property name="state" value="MH" />	
+	
 	</bean>
 	
 	
@@ -21,6 +36,7 @@
 		<constructor-arg name="id" value="123" />
 		<constructor-arg name="name" value="Amit" />
 		<constructor-arg name="gender" value="Male" />	
+		<constructor-arg name="address" ref="add2" />
 	
 	</bean>
 		
