@@ -23,6 +23,8 @@
 	</bean>
 	
 	
+	
+	
 	<bean name="add2" class="learning.spring.model.Address">
 	
 		<property name="city" value="Pune" />
@@ -37,7 +39,40 @@
 		<constructor-arg name="name" value="Amit" />
 		<constructor-arg name="gender" value="Male" />	
 		<constructor-arg name="address" ref="add2" />
-	
+		
+		<constructor-arg name="list">
+			<list>
+				<value>Hello</value>
+				<value>123</value>
+				<value>56</value>
+				<value>789</value>
+				<value>55</value>
+				<value>11</value>				
+			</list>		
+		</constructor-arg>	
+		
+		<constructor-arg name="set">
+			<set>
+				<value>789</value>
+				<value>888</value>
+				<value>77</value>
+				<value>99</value>
+				<value>555</value>			
+			</set>		
+		</constructor-arg>
+		
+		<constructor-arg name="map">
+			<map>
+				<entry key="12" value="5546" />
+				<entry key="1" value="546" />
+				<entry key="15" value="554" />
+				<entry key="2" value="56" />
+				<entry key="1" value="6" />
+				<entry key="22" value="5" />			
+			</map>	
+		
+		</constructor-arg>
+		
 	</bean>
 		
 </beans>
