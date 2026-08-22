@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- bean definitions here -->
-	<bean name="address" class="learning.spring.model.Address">
+	<bean name="address1" class="learning.spring.model.Address">
 	
 		<property name="city" value="Noida" />
 		<property name="state" value="UP" />	
@@ -13,7 +13,7 @@
 	</bean>
 	
 	
-	<bean name="emp1" class="learning.spring.model.Employee" autowire="byName">
+	<bean name="emp1" class="learning.spring.model.Employee" autowire="byType">
 	
 		<property name="id" value="202" />
 		<property name="name" value="Vikas" />
