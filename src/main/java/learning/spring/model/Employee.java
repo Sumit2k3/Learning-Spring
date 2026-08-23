@@ -1,11 +1,33 @@
 package learning.spring.model;
 
-public class Employee {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Employee implements InitializingBean, DisposableBean{
 	
 	private int id;
 	private String name, gender;
 	
 	private Address address;
+	
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Employee.afterPropertiesSet()");
+	}
+	
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Employee.destroy()");
+	}
+	
+	private void xmlIntiMethod(){
+		System.out.println("Employee.xmlIntiMethod()");
+	}
+	
+	private void xmlDestroyMethod() {
+		System.out.println("Employee.xmlDestroyMethod()");
+	}
 	
 	public Employee() {
 		System.out.println("Default Constructor Called Of Employee");
@@ -56,5 +78,7 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
 	}
+
+	
 
 }

@@ -1,5 +1,4 @@
 package learning.spring.main;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import learning.spring.model.Employee;
 
@@ -8,13 +7,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("application-context.xml");
+		ClassPathXmlApplicationContext ca = new ClassPathXmlApplicationContext("application-context.xml");
 		
-		Employee bean1 = ioc.getBean("emp1", Employee.class);
-		System.out.println(bean1);
+		Employee obj = ca.getBean("emp1", Employee.class);
+		System.out.println(obj);
 		
-		Employee bean2 = ioc.getBean("emp2", Employee.class);
-		System.out.println(bean2);
+		ca.registerShutdownHook();
 		
 	}
 
