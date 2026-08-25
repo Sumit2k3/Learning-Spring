@@ -1,11 +1,13 @@
 package learning.spring.model;
 
-public class Employee {
+abstract public class Employee {
 	
 	private int id;
 	private String name, gender;
 	
 	private Address address;
+	
+	public abstract Address applyAddress();
 	
 	public Employee() {
 		System.out.println("Default Constructor Called Of Employee");

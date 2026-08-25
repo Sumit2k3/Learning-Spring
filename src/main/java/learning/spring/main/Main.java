@@ -1,6 +1,8 @@
 package learning.spring.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import learning.spring.model.Address;
 import learning.spring.model.Employee;
 
 public class Main {
@@ -13,9 +15,11 @@ public class Main {
 		Employee bean1 = ioc.getBean("emp1", Employee.class);
 		System.out.println(bean1);
 		
-		Employee bean2 = ioc.getBean("emp2", Employee.class);
-		System.out.println(bean2);
+		bean1.setAddress(bean1.applyAddress());
+		System.out.println(bean1);
 		
+		Address a1 = bean1.applyAddress();
+		System.out.println(a1);
 	}
 
 }
