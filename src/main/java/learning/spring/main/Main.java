@@ -1,6 +1,8 @@
 package learning.spring.main;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import learning.spring.model.Address;
 import learning.spring.model.Employee;
 
 public class Main {
@@ -8,15 +10,15 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("application-context.xml");
+		ApplicationContext ioc = new AnnotationConfigApplicationContext("learning.spring");
 		
-		Employee bean = ioc.getBean("emp1", Employee.class);
+		Employee bean = ioc.getBean(Employee.class);
 		System.out.println(bean);
 		
+		bean.setName("Amit");
+		System.out.println(bean);
 		
-		Employee bean1 = ioc.getBean("emp2", Employee.class);
+		Address bean1 = ioc.getBean(Address.class);
 		System.out.println(bean1);
-		
 	}
-
 }

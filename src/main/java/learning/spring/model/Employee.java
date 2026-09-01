@@ -1,9 +1,17 @@
 package learning.spring.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
 	
 	private int id;
 	private String name, gender;
+	
+//	Field Injection
+	@Autowired
+	private Address address;
 	
 	public Employee() {
 		System.out.println("Default Constructor Called");
@@ -41,7 +49,6 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
 	}
-
 }
